@@ -35,7 +35,7 @@ void* xor(void* arg){
             int previousNum = numArray[i - 1];      //get the number that was recently added to the array
             int result = previousNum ^ constant;    //apply xor
             char asciiResult = (char) result;       //cast to char
-            printf("Numero %d Caracter: %c\n", previousNum, asciiResult);
+            printf("Number: %d Character: %c\n", previousNum, asciiResult);
         }
 
         pthread_mutex_unlock(&mutex);       //unlock the array when the xor has been applied

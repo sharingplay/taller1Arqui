@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 #define THREADS 2
-#define ITERATIONS 10   //  amount of iterations each thread will go through
+#define ITERATIONS 5   //  amount of iterations each thread will go through
 
 int index = 0;              //  index
 int turn = 0;           //  indicate which thread turn is
@@ -21,7 +21,6 @@ void *threadCount(void *arg) {
         //  if its not, the mutex is realeased and assigned to the other thread 
         while (turn != id) {             
             pthread_mutex_unlock(&mutex);
-            usleep(5000);
             pthread_mutex_lock(&mutex);
         }
 
