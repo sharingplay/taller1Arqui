@@ -29,6 +29,7 @@ void *threadCount(void *arg) {
         printf("Thread %d increasing the index to %d\n", id, index); // prints which thread increased the counter
         turn = !id; // assigns the turn to the other thread once the counter was increased
         pthread_mutex_unlock(&mutex);   //unlocks the mutex
+        printf("Thread %d finished increasing the index\n", id);    // indicates the thread has finished its turn
 
         
     }
